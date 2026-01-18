@@ -18,40 +18,44 @@ This section will detail the initial scanning and enumeration of the target mach
 
 *   **Nmap Scan:**
     *   Command: `nmap -A -sC 10.49.164.163 -Pn`
-    *   Results: 
-    PORT     STATE SERVICE       VERSION
-    80/tcp   open  http          Microsoft IIS httpd 10.0
-    | http-methods:
-    |_  Potentially risky methods: TRACE
-    |_http-title: IIS Windows Server
-    |_http-server-header: Microsoft-IIS/10.0
-    3389/tcp open  ms-wbt-server Microsoft Terminal Services
-    | rdp-ntlm-info:
-    |   Target_Name: RETROWEB
-    |   NetBIOS_Domain_Name: RETROWEB
-    |   NetBIOS_Computer_Name: RETROWEB
-    |   DNS_Domain_Name: RetroWeb
-    |   DNS_Computer_Name: RetroWeb
-    |   Product_Version: 10.0.14393
-    |_  System_Time: 2026-01-17T00:12:45+00:00
-    | ssl-cert: Subject: commonName=RetroWeb
+    *   Results:
+
+                PORT     STATE SERVICE       VERSION
+                80/tcp   open  http          Microsoft IIS httpd 10.0
+                | http-methods:
+                |_  Potentially risky methods: TRACE
+                |_http-title: IIS Windows Server
+                |_http-server-header: Microsoft-IIS/10.0
+                3389/tcp open  ms-wbt-server Microsoft Terminal Services
+                | rdp-ntlm-info:
+                |   Target_Name: RETROWEB
+                |   NetBIOS_Domain_Name: RETROWEB
+                |   NetBIOS_Computer_Name: RETROWEB
+                |   DNS_Domain_Name: RetroWeb
+                |   DNS_Computer_Name: RetroWeb
+                |   Product_Version: 10.0.14393
+                |_  System_Time: 2026-01-17T00:12:45+00:00
+                | ssl-cert: Subject: commonName=RetroWeb
+
 
         
 *   **Web Directory Enumeration (e.g., Gobuster/Dirb):**
  *   Command: `gobuster dir -u 10.49.164.163 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt`
  *   Results:
-  ===============================================================
-  [+] Url:                     http://10.49.164.163
-  [+] Method:                  GET
-  [+] Threads:                 10
-  [+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
-  [+] Negative Status codes:   404
-  [+] User Agent:              gobuster/3.8.2
-  [+] Timeout:                 10s
-  ===============================================================
-  Starting gobuster in directory enumeration mode
-  ===============================================================
-  retro                (Status: 301) [Size: 150] [--> http://10.49.164.163/retro/]
+
+          ===============================================================
+              [+] Url:                     http://10.49.164.163
+              [+] Method:                  GET
+              [+] Threads:                 10
+              [+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+              [+] Negative Status codes:   404
+              [+] User Agent:              gobuster/3.8.2
+              [+] Timeout:                 10s
+              ===============================================================
+              Starting gobuster in directory enumeration mode
+              ===============================================================
+              retro                (Status: 301) [Size: 150] [--> http://10.49.164.163/retro/]
+
 
 ## Gaining Access
 
