@@ -30,6 +30,7 @@ Explore the different categories of challenges below.
 > ### 💻 [TryHackMe Labs](./tryhackme-labs/)
 >
 > - [Retro Lab](./tryhackme-labs/retro.md)
+- [Badbyte Lab](./tryhackme-labs/badbyte.md)
 >
 > Detailed walkthroughs and notes for various rooms and labs on the TryHackMe platform.
 
